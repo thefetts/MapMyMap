@@ -28,3 +28,4 @@ playground.xcworkspace
 .iml
 .idea
 .DS_Store
+*.env

@@ -12,7 +12,6 @@
 		AEDC7ADF1E785D92003D0B59 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDC7ADE1E785D92003D0B59 /* Quick.framework */; };
 		AEDC7AE41E785F78003D0B59 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDC7AE31E785F78003D0B59 /* CoreLocation.framework */; };
 		DE99C2C4DC436C0626B06114 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99C10702BD2305C0DB24CD /* MainViewController.swift */; };
-		DE99C3C9AEC8C38AEE3E119B /* Cartfile.private in Resources */ = {isa = PBXBuildFile; fileRef = DE99CF9C023C60850F2A76A4 /* Cartfile.private */; };
 		DE99CCC48D328CD329E525A8 /* MainViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99C18BF3DD0848E55A4EE0 /* MainViewControllerTest.swift */; };
 		DE99CE6811950C5085DFDE7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE99CF16D6BB2D51A41867AF /* Assets.xcassets */; };
 		DE99CE685985E312FFA9081A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE99C247F4082C87649570C0 /* LaunchScreen.storyboard */; };
@@ -55,7 +54,6 @@
 		DE99CEE831A6935DCE069AB0 /* MapMyMapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMyMapUITests.swift; sourceTree = "<group>"; };
 		DE99CEF242C9EA87349CD3A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		DE99CF16D6BB2D51A41867AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DE99CF9C023C60850F2A76A4 /* Cartfile.private */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.private; path = Cartfile.private; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +102,6 @@
 				DE99CD26EA3165E32CF6F050 /* MapMyMap */,
 				DE99CFB42CC48D689E9E188C /* MapMyMapTests */,
 				DE99C78CC89C665C04814DD7 /* MapMyMapUITests */,
-				DE99CF9C023C60850F2A76A4 /* Cartfile.private */,
 				AEDC7AD91E7843CC003D0B59 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -216,6 +213,18 @@
 			attributes = {
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Pivotal;
+				TargetAttributes = {
+					DE99C465A01A242D829694E7 = {
+						DevelopmentTeam = H6S25Q987W;
+						ProvisioningStyle = Manual;
+					};
+					DE99C96941B67AEE1709D74C = {
+						ProvisioningStyle = Manual;
+					};
+					DE99CACD381E846CA380B909 = {
+						ProvisioningStyle = Manual;
+					};
+				};
 			};
 			buildConfigurationList = DE99C14464D902A65AE09402 /* Build configuration list for PBXProject "MapMyMap" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -258,7 +267,6 @@
 				DE99CE6811950C5085DFDE7B /* Assets.xcassets in Resources */,
 				DE99CE685985E312FFA9081A /* LaunchScreen.storyboard in Resources */,
 				DE99CF29859EE3D001D05ED0 /* Main.storyboard in Resources */,
-				DE99C3C9AEC8C38AEE3E119B /* Cartfile.private in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +368,7 @@
 		DE99C02D485CF9D3DD72136F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -469,6 +478,7 @@
 		DE99C1FD6B6F21BF8819992C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -486,11 +496,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H6S25Q987W;
 				INFOPLIST_FILE = MapMyMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.pivotal.MapMyMap;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nopechat.MapMyMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0cb44d3a-6fd2-4314-a11d-4eea816057cd";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.nopechat.MapMyMap";
 				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
@@ -498,6 +514,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MapMyMap.app/MapMyMap";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -515,6 +532,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MapMyMap.app/MapMyMap";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -532,11 +550,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H6S25Q987W;
 				INFOPLIST_FILE = MapMyMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.pivotal.MapMyMap;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nopechat.MapMyMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0cb44d3a-6fd2-4314-a11d-4eea816057cd";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.nopechat.MapMyMap";
 				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};

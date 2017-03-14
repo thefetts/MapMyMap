@@ -1,0 +1,64 @@
+# Customise this file, documentation can be found here:
+# https://github.com/fastlane/fastlane/tree/master/fastlane/docs
+# All available actions: https://docs.fastlane.tools/actions
+# can also be listed using the `fastlane actions` command
+
+# Change the syntax highlighting to Ruby
+# All lines starting with a # are ignored when running `fastlane`
+
+# If you want to automatically update fastlane if a new version is available:
+# update_fastlane
+
+# This is the minimum version number required.
+# Update this, if you use features of a newer version
+fastlane_version "2.19.1"
+
+default_platform :ios
+
+platform :ios do
+  desc "Runs all the tests"
+  lane :test do
+    self.unit_test
+    self.ui_test
+  end
+
+  desc "Runs all the unit tests"
+  lane :unit_test do
+    scan(
+      project: "MapMyMap.xcodeproj",
+      scheme: "MapMyMapTests",
+      device: "iPhone 5s",
+      clean: false
+    )
+  end
+
+  desc "Runs all the UI tests"
+  lane :ui_test do
+    scan(
+      project: "MapMyMap.xcodeproj",
+      scheme: "MapMyMapUITests",
+      device: "iPhone 5s",
+      clean: false
+    )
+  end
+
+  desc "Submit a new Beta Build to Apple TestFlight"
+  desc "This will also make sure the profile is up to date"
+  lane :beta do
+    ensure_git_status_clean
+    increment_build_number
+    commit_version_bump(
+      xcodeproj: "MapMyMap.xcodeproj"
+    )
+    push_to_git_remote
+
+    match(type: "appstore")
+    gym(
+      scheme: "MapMyMap",
+      clean: true,
+      output_directory: "builds/",
+      output_name: "MapMyMap.ipa"
+    )
+    pilot
+  end
+end
