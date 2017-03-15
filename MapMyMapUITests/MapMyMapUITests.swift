@@ -27,14 +27,20 @@ class MapMyMapUITests: XCTestCase {
         app.tap()
     }
 
-    override func tearDown() {
-        super.tearDown()
-    }
-
     func testMainView() {
         expect(self.app.navigationBars.staticTexts["Your Current Location"].exists).to(beTrue())
 
-        expect(self.app.staticTexts["37.785834° N"].exists).to(beTrue())
-        expect(self.app.staticTexts["122.406417° W"].exists).to(beTrue())
+        expect(self.app.staticTexts["Latitude: 37.785834° N"].exists).to(beTrue())
+        expect(self.app.staticTexts["Longitude: 122.406417° W"].exists).to(beTrue())
+
+        let femaleSwitch = self.app.switches["FemaleSwitch"]
+        expect(femaleSwitch.exists).to(beTrue())
+        femaleSwitch.tap()
+
+        let updateButton = self.app.buttons["UPDATE"]
+        expect(updateButton.exists).to(beTrue())
+        updateButton.tap()
+
+        expect(self.app.alerts["Success"].staticTexts["SENT: Not Female (37.785834, -122.406417)"].exists).to(beTrue())
     }
 }

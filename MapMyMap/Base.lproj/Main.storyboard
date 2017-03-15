@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="MainViewController" customModule="MapMyMap" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,6 +33,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4b-b2-4e2">
+                                <rect key="frame" x="10" y="233" width="65" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="UPDATE"/>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mh5-XT-p5f">
+                                <rect key="frame" x="10" y="159" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" label="FemaleSwitch"/>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -48,8 +58,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="PuO-pt-1hb"/>
                     <connections>
-                        <outlet property="latitude" destination="i9t-gw-gAk" id="vVn-M0-Onz"/>
-                        <outlet property="longitude" destination="asJ-Ju-csM" id="QXp-Bz-Zsu"/>
+                        <outlet property="femaleSwitch" destination="Mh5-XT-p5f" id="LH5-7T-qaB"/>
+                        <outlet property="latitudeLabel" destination="i9t-gw-gAk" id="ljE-EL-6Kw"/>
+                        <outlet property="longitudeLabel" destination="asJ-Ju-csM" id="rj3-0i-rX1"/>
+                        <outlet property="updateButton" destination="w4b-b2-4e2" id="ZLr-rq-Qxk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

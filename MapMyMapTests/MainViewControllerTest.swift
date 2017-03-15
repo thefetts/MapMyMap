@@ -6,9 +6,11 @@
 //  Copyright (c) 2017 Pivotal. All rights reserved.
 //
 
+import CoreLocation
+
 import Quick
 import Nimble
-import CoreLocation
+import Fleet
 
 @testable import MapMyMap
 
@@ -29,20 +31,71 @@ class MainViewControllerTest: QuickSpec {
             describe("viewDidLoad") {
                 context("user location") {
                     it("sets the labels based on the device's location data") {
-                        subject.view.layoutSubviews()
+                        _ = Fleet.setInAppWindowRootNavigation(subject)
 
-                        expect(subject.latitude.text).to(equal("37.4° N"))
-                        expect(subject.longitude.text).to(equal("104.7° W"))
+                        expect(subject.latitudeLabel.text).to(equal("Latitude: 37.4° N"))
+                        expect(subject.longitudeLabel.text).to(equal("Longitude: 104.7° W"))
                     }
 
                     it("can do E and S values") {
-                        mockManager.nextLongitude = 78.1
                         mockManager.nextLatitude = -42.0
+                        mockManager.nextLongitude = 78.1
 
-                        subject.view.layoutSubviews()
+                        _ = Fleet.setInAppWindowRootNavigation(subject)
 
-                        expect(subject.latitude.text).to(equal("42.0° S"))
-                        expect(subject.longitude.text).to(equal("78.1° E"))
+                        expect(subject.latitudeLabel.text).to(equal("Latitude: 42.0° S"))
+                        expect(subject.longitudeLabel.text).to(equal("Longitude: 78.1° E"))
+                    }
+                }
+
+                context("femaleSwitch") {
+                    it("defaults on") {
+                        _ = Fleet.setInAppWindowRootNavigation(subject)
+
+                        expect(subject.femaleSwitch.isOn).to(beTrue())
+                    }
+                }
+            }
+
+            describe("updateButtonTapped") {
+                describe("presented UIAlertController") {
+                    it("displays the sent coordinates") {
+                        mockManager.nextLatitude = -42.0
+                        mockManager.nextLongitude = 78.1
+                        _ = Fleet.setInAppWindowRootNavigation(subject)
+
+                        try! subject.updateButton.tap()
+
+                        expect(subject.presentedViewController).to(beAKindOf(UIAlertController.self))
+                        let expectedAlertController = subject.presentedViewController as! UIAlertController
+
+                        expect(expectedAlertController.title).to(equal("Success"))
+                        expect(expectedAlertController.message).to(contain(["(-42.0, 78.1)"]))
+                    }
+
+                    context("when female switch is on") {
+                        it("says Female") {
+                            _ = Fleet.setInAppWindowRootNavigation(subject)
+
+                            try! subject.updateButton.tap()
+
+                            let expectedAlertController = subject.presentedViewController as! UIAlertController
+                            expect(expectedAlertController.message).to(contain(["Female"]))
+                            expect(expectedAlertController.message).toNot(contain(["Not"]))
+                        }
+                    }
+
+                    context("when female switch is off") {
+                        it("says Not Female") {
+
+                            _ = Fleet.setInAppWindowRootNavigation(subject)
+
+                            try! subject.femaleSwitch.flip()
+                            try! subject.updateButton.tap()
+
+                            let expectedAlertController = subject.presentedViewController as! UIAlertController
+                            expect(expectedAlertController.message).to(contain(["Not Female"]))
+                        }
                     }
                 }
             }
@@ -51,8 +104,8 @@ class MainViewControllerTest: QuickSpec {
 }
 
 class MockCLLocationManager: CLLocationManager {
-    var nextLongitude: Double = -104.7
     var nextLatitude: Double = 37.4
+    var nextLongitude: Double = -104.7
 
     override func requestLocation() {
         delegate!.locationManager!(self, didUpdateLocations: [

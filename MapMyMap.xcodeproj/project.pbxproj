@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE7E2FBC1E79D054003155D4 /* Fleet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7E2FBB1E79D054003155D4 /* Fleet.framework */; };
 		AEDC7ADB1E7843CC003D0B59 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDC7ADA1E7843CC003D0B59 /* Nimble.framework */; };
 		AEDC7ADD1E785CF4003D0B59 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDC7ADA1E7843CC003D0B59 /* Nimble.framework */; };
 		AEDC7ADF1E785D92003D0B59 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDC7ADE1E785D92003D0B59 /* Quick.framework */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AE7E2FBB1E79D054003155D4 /* Fleet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fleet.framework; path = Carthage/Build/iOS/Fleet.framework; sourceTree = "<group>"; };
 		AEDC7ADA1E7843CC003D0B59 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		AEDC7ADE1E785D92003D0B59 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		AEDC7AE31E785F78003D0B59 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -61,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE7E2FBC1E79D054003155D4 /* Fleet.framework in Frameworks */,
 				AEDC7ADF1E785D92003D0B59 /* Quick.framework in Frameworks */,
 				AEDC7ADD1E785CF4003D0B59 /* Nimble.framework in Frameworks */,
 			);
@@ -88,6 +91,7 @@
 		AEDC7AD91E7843CC003D0B59 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE7E2FBB1E79D054003155D4 /* Fleet.framework */,
 				AEDC7AE31E785F78003D0B59 /* CoreLocation.framework */,
 				AEDC7ADE1E785D92003D0B59 /* Quick.framework */,
 				AEDC7ADA1E7843CC003D0B59 /* Nimble.framework */,
@@ -175,6 +179,7 @@
 				DE99C14B59EFB07E22A9A957 /* Frameworks */,
 				DE99CBD72B8BF757AE635306 /* Resources */,
 				AEDC7AE01E785D96003D0B59 /* ShellScript */,
+				AE7E2FBD1E79D07B003155D4 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -273,6 +278,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		AE7E2FBD1E79D07B003155D4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = $PROJECT_DIR/Carthage/Build/iOS/Fleet.framework/copy_storyboard_info_files.sh;
+		};
 		AEDC7ADC1E7843D3003D0B59 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -295,6 +313,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Fleet.framework",
 			);
 			outputPaths = (
 			);
