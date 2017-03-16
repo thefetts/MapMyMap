@@ -12,6 +12,7 @@
 		AEDC7ADD1E785CF4003D0B59 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDC7ADA1E7843CC003D0B59 /* Nimble.framework */; };
 		AEDC7ADF1E785D92003D0B59 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDC7ADE1E785D92003D0B59 /* Quick.framework */; };
 		AEDC7AE41E785F78003D0B59 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDC7AE31E785F78003D0B59 /* CoreLocation.framework */; };
+		DE99C198999BBB985CBF3F66 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = DE99C9A89E158DF5BB2D4486 /* README.md */; };
 		DE99C2C4DC436C0626B06114 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99C10702BD2305C0DB24CD /* MainViewController.swift */; };
 		DE99CCC48D328CD329E525A8 /* MainViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99C18BF3DD0848E55A4EE0 /* MainViewControllerTest.swift */; };
 		DE99CE6811950C5085DFDE7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE99CF16D6BB2D51A41867AF /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		DE99C504AF000B8D27DB9CA3 /* MapMyMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapMyMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE99C60048C9ED1039D9164F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE99C7A40C2D716FD9AF0EEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DE99C9A89E158DF5BB2D4486 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DE99CA61C9271E1970BFBF35 /* MapMyMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapMyMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE99CAE6407AB5AC8B167B3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		DE99CE26A85E898389C707E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				DE99CFB42CC48D689E9E188C /* MapMyMapTests */,
 				DE99C78CC89C665C04814DD7 /* MapMyMapUITests */,
 				AEDC7AD91E7843CC003D0B59 /* Frameworks */,
+				DE99C9A89E158DF5BB2D4486 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -338,6 +341,7 @@
 			files = (
 				DE99CEB7902A4BBD5276B5DD /* AppDelegate.swift in Sources */,
 				DE99C2C4DC436C0626B06114 /* MainViewController.swift in Sources */,
+				DE99C198999BBB985CBF3F66 /* README.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
