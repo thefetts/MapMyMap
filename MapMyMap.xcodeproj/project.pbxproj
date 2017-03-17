@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE3F6FC41E7C4F3B0061933D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3F6FC31E7C4F3B0061933D /* Alamofire.framework */; };
 		AE7E2FBC1E79D054003155D4 /* Fleet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7E2FBB1E79D054003155D4 /* Fleet.framework */; };
 		AEDC7ADB1E7843CC003D0B59 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDC7ADA1E7843CC003D0B59 /* Nimble.framework */; };
 		AEDC7ADD1E785CF4003D0B59 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDC7ADA1E7843CC003D0B59 /* Nimble.framework */; };
@@ -40,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AE3F6FA61E7C37740061933D /* PerfectHTTPServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PerfectHTTPServer.framework; path = "Perfect-HTTPServer/build/Debug/PerfectHTTPServer.framework"; sourceTree = "<group>"; };
+		AE3F6FBF1E7C3E600061933D /* Kitura.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kitura.framework; path = Kitura/build/Debug/Kitura.framework; sourceTree = "<group>"; };
+		AE3F6FC31E7C4F3B0061933D /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		AE7E2FBB1E79D054003155D4 /* Fleet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fleet.framework; path = Carthage/Build/iOS/Fleet.framework; sourceTree = "<group>"; };
 		AEDC7ADA1E7843CC003D0B59 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		AEDC7ADE1E785D92003D0B59 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
@@ -75,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE3F6FC41E7C4F3B0061933D /* Alamofire.framework in Frameworks */,
 				AEDC7ADB1E7843CC003D0B59 /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,6 +98,9 @@
 		AEDC7AD91E7843CC003D0B59 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE3F6FC31E7C4F3B0061933D /* Alamofire.framework */,
+				AE3F6FBF1E7C3E600061933D /* Kitura.framework */,
+				AE3F6FA61E7C37740061933D /* PerfectHTTPServer.framework */,
 				AE7E2FBB1E79D054003155D4 /* Fleet.framework */,
 				AEDC7AE31E785F78003D0B59 /* CoreLocation.framework */,
 				AEDC7ADE1E785D92003D0B59 /* Quick.framework */,
@@ -231,6 +239,7 @@
 					};
 					DE99CACD381E846CA380B909 = {
 						ProvisioningStyle = Manual;
+						TestTargetID = DE99C465A01A242D829694E7;
 					};
 				};
 			};
@@ -301,6 +310,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 			);
 			outputPaths = (
 			);
@@ -400,6 +410,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.pivotal.MapMyMapUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0cb44d3a-6fd2-4314-a11d-4eea816057cd";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = MapMyMap;
 			};
@@ -510,6 +521,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.pivotal.MapMyMapUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0cb44d3a-6fd2-4314-a11d-4eea816057cd";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = MapMyMap;
 			};

@@ -6,9 +6,9 @@
 1. `bundle install`?
 
 # Run tests
-1. `bundle exec fastlane tests`
-1. `bundle exec fastlane unit_tests` for unit tests only
-1. `bundle exec fastlane ui_tests` for ui tests only
+1. `bundle exec fastlane test`
+1. `bundle exec fastlane unit_test` for unit tests only
+1. `bundle exec fastlane ui_test` for ui tests only
 
 # Deploy to Test Flight
 
