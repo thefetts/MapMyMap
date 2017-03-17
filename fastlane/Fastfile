@@ -28,7 +28,7 @@ platform :ios do
       project: "MapMyMap.xcodeproj",
       scheme: "MapMyMapTests",
       device: "iPhone 5s",
-      clean: false
+      clean: true
     )
   end
 
@@ -38,7 +38,7 @@ platform :ios do
       project: "MapMyMap.xcodeproj",
       scheme: "MapMyMapUITests",
       device: "iPhone 5s",
-      clean: false
+      clean: true
     )
   end
 

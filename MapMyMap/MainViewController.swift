@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import Alamofire
 
 class MainViewController: UIViewController, CLLocationManagerDelegate {
 
@@ -27,8 +28,11 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         navigationItem.title = "Your Current Location"
 
         locationManager.delegate = self
+        print("Requesting permission to use location services")
         locationManager.requestWhenInUseAuthorization()
+        print("Permission granted")
         locationManager.requestLocation()
+        print("Requesting Location")
 
         updateButton.addTarget(self, action: #selector(updateButtonTapped), for: UIControlEvents.touchUpInside)
     }
@@ -42,9 +46,12 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
         alertViewController.addAction(okAction)
         self.present(alertViewController, animated: true)
+        Alamofire.request("https://localhost:9999/locations", method: .post)
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("Got locations")
+        print(locations)
         let location = locations.first!
 
         latitude = location.coordinate.latitude

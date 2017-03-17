@@ -7,13 +7,17 @@
 //
 
 import XCTest
+
 import Nimble
+import Alamofire
 
 class MapMyMapUITests: XCTestCase {
     let app = XCUIApplication()
 
     override func setUp() {
         super.setUp()
+
+        setupWireMock()
 
         addUIInterruptionMonitor(withDescription: "We wanna know where you are!") {
             (alert) -> Bool in
@@ -27,6 +31,31 @@ class MapMyMapUITests: XCTestCase {
         app.tap()
     }
 
+    func setupWireMock() {
+        let parameters = [
+                "request": [
+                        "method": "POST",
+                        "url": "/locations",
+                        "bodyPatterns": [
+                                [
+                                    "equalToJson": "{\"female\":false}",
+                                ]
+                        ]
+                ],
+                "response": [
+                        "status": 200,
+                        "body": ""
+                ]
+        ]
+
+        let _ = Alamofire.request(
+                "https://localhost:9999/__admin/mappings/new",
+                method: .post, parameters: parameters, encoding: JSONEncoding.default
+        ).responseJSON { response in
+            // Do something with this to make sure it actually set the mapping
+        }
+    }
+
     func testMainView() {
         expect(self.app.navigationBars.staticTexts["Your Current Location"].exists).to(beTrue())
 
@@ -37,10 +66,35 @@ class MapMyMapUITests: XCTestCase {
         expect(femaleSwitch.exists).to(beTrue())
         femaleSwitch.tap()
 
+        let parameters = [
+                "method": "POST",
+                "url": "/locations"
+        ]
+
+        Alamofire.request("https://localhost:9999/__admin/requests/count",
+                          method: .post, parameters: parameters, encoding: JSONEncoding.default
+        ).responseJSON { response in
+            if let dictionary = response.result.value as? [AnyHashable: Any] {
+                if let count = dictionary["count"] as? Int {
+                    expect(count).to(equal(0))
+                }
+            }
+        }
+
         let updateButton = self.app.buttons["UPDATE"]
         expect(updateButton.exists).to(beTrue())
         updateButton.tap()
 
         expect(self.app.alerts["Success"].staticTexts["SENT: Not Female (37.785834, -122.406417)"].exists).to(beTrue())
+
+        Alamofire.request("https://localhost:9999/__admin/requests/count",
+                          method: .post, parameters: parameters, encoding: JSONEncoding.default
+        ).responseJSON { response in
+            if let dictionary = response.result.value as? [AnyHashable: Any] {
+                if let count = dictionary["count"] as? Int {
+                    expect(count).to(equal(1))
+                }
+            }
+        }
     }
 }

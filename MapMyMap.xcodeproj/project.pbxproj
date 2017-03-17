@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE3F6FC41E7C4F3B0061933D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3F6FC31E7C4F3B0061933D /* Alamofire.framework */; };
 		AE7E2FBC1E79D054003155D4 /* Fleet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7E2FBB1E79D054003155D4 /* Fleet.framework */; };
 		AEDC7ADB1E7843CC003D0B59 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDC7ADA1E7843CC003D0B59 /* Nimble.framework */; };
 		AEDC7ADD1E785CF4003D0B59 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDC7ADA1E7843CC003D0B59 /* Nimble.framework */; };
 		AEDC7ADF1E785D92003D0B59 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDC7ADE1E785D92003D0B59 /* Quick.framework */; };
 		AEDC7AE41E785F78003D0B59 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDC7AE31E785F78003D0B59 /* CoreLocation.framework */; };
+		AEFCEC361E7C8884005E9748 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3F6FC31E7C4F3B0061933D /* Alamofire.framework */; };
 		DE99C198999BBB985CBF3F66 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = DE99C9A89E158DF5BB2D4486 /* README.md */; };
 		DE99C2C4DC436C0626B06114 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99C10702BD2305C0DB24CD /* MainViewController.swift */; };
 		DE99CCC48D328CD329E525A8 /* MainViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99C18BF3DD0848E55A4EE0 /* MainViewControllerTest.swift */; };
@@ -40,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AE3F6FA61E7C37740061933D /* PerfectHTTPServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PerfectHTTPServer.framework; path = "Perfect-HTTPServer/build/Debug/PerfectHTTPServer.framework"; sourceTree = "<group>"; };
+		AE3F6FBF1E7C3E600061933D /* Kitura.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kitura.framework; path = Kitura/build/Debug/Kitura.framework; sourceTree = "<group>"; };
+		AE3F6FC31E7C4F3B0061933D /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		AE7E2FBB1E79D054003155D4 /* Fleet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fleet.framework; path = Carthage/Build/iOS/Fleet.framework; sourceTree = "<group>"; };
 		AEDC7ADA1E7843CC003D0B59 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		AEDC7ADE1E785D92003D0B59 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
@@ -75,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE3F6FC41E7C4F3B0061933D /* Alamofire.framework in Frameworks */,
 				AEDC7ADB1E7843CC003D0B59 /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEFCEC361E7C8884005E9748 /* Alamofire.framework in Frameworks */,
 				AEDC7AE41E785F78003D0B59 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,6 +100,9 @@
 		AEDC7AD91E7843CC003D0B59 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE3F6FC31E7C4F3B0061933D /* Alamofire.framework */,
+				AE3F6FBF1E7C3E600061933D /* Kitura.framework */,
+				AE3F6FA61E7C37740061933D /* PerfectHTTPServer.framework */,
 				AE7E2FBB1E79D054003155D4 /* Fleet.framework */,
 				AEDC7AE31E785F78003D0B59 /* CoreLocation.framework */,
 				AEDC7ADE1E785D92003D0B59 /* Quick.framework */,
@@ -164,6 +174,7 @@
 				DE99C3FFE1CA6DF84B8509DF /* Sources */,
 				DE99CABB92568F2762DB6F21 /* Frameworks */,
 				DE99CBF30AB48FDA96CC1359 /* Resources */,
+				AEFCEC371E7C8887005E9748 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -231,6 +242,7 @@
 					};
 					DE99CACD381E846CA380B909 = {
 						ProvisioningStyle = Manual;
+						TestTargetID = DE99C465A01A242D829694E7;
 					};
 				};
 			};
@@ -301,6 +313,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 			);
 			outputPaths = (
 			);
@@ -317,6 +330,20 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Fleet.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		AEFCEC371E7C8887005E9748 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 			);
 			outputPaths = (
 			);
@@ -400,6 +427,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.pivotal.MapMyMapUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0cb44d3a-6fd2-4314-a11d-4eea816057cd";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = MapMyMap;
 			};
@@ -510,6 +538,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.pivotal.MapMyMapUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0cb44d3a-6fd2-4314-a11d-4eea816057cd";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = MapMyMap;
 			};
@@ -522,6 +551,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = H6S25Q987W;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MapMyMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nopechat.MapMyMap;
@@ -576,6 +609,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = H6S25Q987W;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MapMyMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nopechat.MapMyMap;
