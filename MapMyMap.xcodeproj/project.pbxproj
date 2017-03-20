@@ -7,13 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE3F6FC41E7C4F3B0061933D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3F6FC31E7C4F3B0061933D /* Alamofire.framework */; };
 		AE7E2FBC1E79D054003155D4 /* Fleet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7E2FBB1E79D054003155D4 /* Fleet.framework */; };
 		AEDC7ADB1E7843CC003D0B59 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDC7ADA1E7843CC003D0B59 /* Nimble.framework */; };
 		AEDC7ADD1E785CF4003D0B59 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDC7ADA1E7843CC003D0B59 /* Nimble.framework */; };
 		AEDC7ADF1E785D92003D0B59 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDC7ADE1E785D92003D0B59 /* Quick.framework */; };
 		AEDC7AE41E785F78003D0B59 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDC7AE31E785F78003D0B59 /* CoreLocation.framework */; };
-		DE99C198999BBB985CBF3F66 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = DE99C9A89E158DF5BB2D4486 /* README.md */; };
+		AEFCEC361E7C8884005E9748 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3F6FC31E7C4F3B0061933D /* Alamofire.framework */; };
+		AEFCEC391E8048F8005E9748 /* Freddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEFCEC381E8048F8005E9748 /* Freddy.framework */; };
+		DE99C068750DE8F2F916B7C7 /* WireMockResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99CC97DBEA8E7288D63B05 /* WireMockResponse.swift */; };
 		DE99C2C4DC436C0626B06114 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99C10702BD2305C0DB24CD /* MainViewController.swift */; };
+		DE99C927C96E0252EEF18E59 /* UITestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99C9E2821A5A8DF8D4CDE3 /* UITestHelper.swift */; };
+		DE99CA44ABDCA47CDAC5B409 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99CDFFE746D3EE6D4AA054 /* HTTPClient.swift */; };
 		DE99CCC48D328CD329E525A8 /* MainViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99C18BF3DD0848E55A4EE0 /* MainViewControllerTest.swift */; };
 		DE99CE6811950C5085DFDE7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE99CF16D6BB2D51A41867AF /* Assets.xcassets */; };
 		DE99CE685985E312FFA9081A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE99C247F4082C87649570C0 /* LaunchScreen.storyboard */; };
@@ -40,10 +45,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AE3F6FA61E7C37740061933D /* PerfectHTTPServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PerfectHTTPServer.framework; path = "Perfect-HTTPServer/build/Debug/PerfectHTTPServer.framework"; sourceTree = "<group>"; };
+		AE3F6FBF1E7C3E600061933D /* Kitura.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kitura.framework; path = Kitura/build/Debug/Kitura.framework; sourceTree = "<group>"; };
+		AE3F6FC31E7C4F3B0061933D /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		AE7E2FBB1E79D054003155D4 /* Fleet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fleet.framework; path = Carthage/Build/iOS/Fleet.framework; sourceTree = "<group>"; };
 		AEDC7ADA1E7843CC003D0B59 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		AEDC7ADE1E785D92003D0B59 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		AEDC7AE31E785F78003D0B59 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		AEFCEC381E8048F8005E9748 /* Freddy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Freddy.framework; path = Carthage/Build/iOS/Freddy.framework; sourceTree = "<group>"; };
 		DE99C10702BD2305C0DB24CD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DE99C18BF3DD0848E55A4EE0 /* MainViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTest.swift; sourceTree = "<group>"; };
 		DE99C331261F2ACA8FEA6EE8 /* MapMyMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapMyMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,9 +60,11 @@
 		DE99C504AF000B8D27DB9CA3 /* MapMyMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapMyMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE99C60048C9ED1039D9164F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE99C7A40C2D716FD9AF0EEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		DE99C9A89E158DF5BB2D4486 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DE99C9E2821A5A8DF8D4CDE3 /* UITestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestHelper.swift; sourceTree = "<group>"; };
 		DE99CA61C9271E1970BFBF35 /* MapMyMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapMyMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE99CAE6407AB5AC8B167B3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		DE99CC97DBEA8E7288D63B05 /* WireMockResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WireMockResponse.swift; sourceTree = "<group>"; };
+		DE99CDFFE746D3EE6D4AA054 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		DE99CE26A85E898389C707E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE99CEE831A6935DCE069AB0 /* MapMyMapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMyMapUITests.swift; sourceTree = "<group>"; };
 		DE99CEF242C9EA87349CD3A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -75,6 +86,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEFCEC391E8048F8005E9748 /* Freddy.framework in Frameworks */,
+				AE3F6FC41E7C4F3B0061933D /* Alamofire.framework in Frameworks */,
 				AEDC7ADB1E7843CC003D0B59 /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEFCEC361E7C8884005E9748 /* Alamofire.framework in Frameworks */,
 				AEDC7AE41E785F78003D0B59 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,6 +107,10 @@
 		AEDC7AD91E7843CC003D0B59 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AEFCEC381E8048F8005E9748 /* Freddy.framework */,
+				AE3F6FC31E7C4F3B0061933D /* Alamofire.framework */,
+				AE3F6FBF1E7C3E600061933D /* Kitura.framework */,
+				AE3F6FA61E7C37740061933D /* PerfectHTTPServer.framework */,
 				AE7E2FBB1E79D054003155D4 /* Fleet.framework */,
 				AEDC7AE31E785F78003D0B59 /* CoreLocation.framework */,
 				AEDC7ADE1E785D92003D0B59 /* Quick.framework */,
@@ -109,7 +127,6 @@
 				DE99CFB42CC48D689E9E188C /* MapMyMapTests */,
 				DE99C78CC89C665C04814DD7 /* MapMyMapUITests */,
 				AEDC7AD91E7843CC003D0B59 /* Frameworks */,
-				DE99C9A89E158DF5BB2D4486 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +145,8 @@
 			children = (
 				DE99CAE6407AB5AC8B167B3F /* Info.plist */,
 				DE99CEE831A6935DCE069AB0 /* MapMyMapUITests.swift */,
+				DE99C9E2821A5A8DF8D4CDE3 /* UITestHelper.swift */,
+				DE99CC97DBEA8E7288D63B05 /* WireMockResponse.swift */,
 			);
 			path = MapMyMapUITests;
 			sourceTree = "<group>";
@@ -141,6 +160,7 @@
 				DE99CE26A85E898389C707E3 /* AppDelegate.swift */,
 				DE99C7DACB44AAC9F37BDFA8 /* Main.storyboard */,
 				DE99C10702BD2305C0DB24CD /* MainViewController.swift */,
+				DE99CDFFE746D3EE6D4AA054 /* HTTPClient.swift */,
 			);
 			path = MapMyMap;
 			sourceTree = "<group>";
@@ -164,6 +184,7 @@
 				DE99C3FFE1CA6DF84B8509DF /* Sources */,
 				DE99CABB92568F2762DB6F21 /* Frameworks */,
 				DE99CBF30AB48FDA96CC1359 /* Resources */,
+				AEFCEC371E7C8887005E9748 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -231,6 +252,7 @@
 					};
 					DE99CACD381E846CA380B909 = {
 						ProvisioningStyle = Manual;
+						TestTargetID = DE99C465A01A242D829694E7;
 					};
 				};
 			};
@@ -301,6 +323,8 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Freddy.framework",
 			);
 			outputPaths = (
 			);
@@ -324,6 +348,20 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
+		AEFCEC371E7C8887005E9748 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -332,6 +370,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE99CF13B6DB13134C5E3DEB /* MapMyMapUITests.swift in Sources */,
+				DE99C927C96E0252EEF18E59 /* UITestHelper.swift in Sources */,
+				DE99C068750DE8F2F916B7C7 /* WireMockResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,7 +381,7 @@
 			files = (
 				DE99CEB7902A4BBD5276B5DD /* AppDelegate.swift in Sources */,
 				DE99C2C4DC436C0626B06114 /* MainViewController.swift in Sources */,
-				DE99C198999BBB985CBF3F66 /* README.md in Sources */,
+				DE99CA44ABDCA47CDAC5B409 /* HTTPClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +440,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.pivotal.MapMyMapUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0cb44d3a-6fd2-4314-a11d-4eea816057cd";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = MapMyMap;
 			};
@@ -510,6 +551,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.pivotal.MapMyMapUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0cb44d3a-6fd2-4314-a11d-4eea816057cd";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = MapMyMap;
 			};
@@ -522,6 +564,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = H6S25Q987W;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MapMyMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nopechat.MapMyMap;
@@ -576,6 +622,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = H6S25Q987W;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MapMyMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nopechat.MapMyMap;

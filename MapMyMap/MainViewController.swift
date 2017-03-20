@@ -17,6 +17,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var femaleSwitch: UISwitch!
 
     var locationManager = CLLocationManager()
+    var httpClient = HTTPClient()
 
     var latitude = 0.0
     var longitude = 0.0
@@ -42,6 +43,13 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
         alertViewController.addAction(okAction)
         self.present(alertViewController, animated: true)
+
+        let parameters: [String: Any] = [
+                "female": femaleSwitch.isOn,
+                "lat": latitude,
+                "lng": longitude
+        ]
+        httpClient.request("http://localhost:9999/locations", method: .post, parameters: parameters)
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

@@ -11,6 +11,7 @@ import CoreLocation
 import Quick
 import Nimble
 import Fleet
+import Alamofire
 
 @testable import MapMyMap
 
@@ -87,7 +88,6 @@ class MainViewControllerTest: QuickSpec {
 
                     context("when female switch is off") {
                         it("says Not Female") {
-
                             _ = Fleet.setInAppWindowRootNavigation(subject)
 
                             try! subject.femaleSwitch.flip()
@@ -98,8 +98,45 @@ class MainViewControllerTest: QuickSpec {
                         }
                     }
                 }
+
+                describe("httpClient") {
+                    context("when female switch is on") {
+                        it("the parameter for female should be set to true") {
+                            let mockHTTPClient = MockHTTPClient()
+                            subject.httpClient = mockHTTPClient
+
+                            _ = Fleet.setInAppWindowRootNavigation(subject)
+
+                            try! subject.updateButton.tap()
+
+                            expect(mockHTTPClient.lastPassedFemale).to(beTrue())
+                        }
+                    }
+
+                    context("when female switch is off") {
+                        it("the parameter for female should be set to false") {
+                            let mockHTTPClient = MockHTTPClient()
+                            subject.httpClient = mockHTTPClient
+
+                            _ = Fleet.setInAppWindowRootNavigation(subject)
+
+                            try! subject.femaleSwitch.flip()
+                            try! subject.updateButton.tap()
+
+                            expect(mockHTTPClient.lastPassedFemale).to(beFalse())
+                        }
+                    }
+                }
             }
         }
+    }
+}
+
+class MockHTTPClient: HTTPClient {
+    var lastPassedFemale: Bool = false
+
+    override func request(_ url: URLConvertible, method: Alamofire.HTTPMethod, parameters: Parameters?) {
+        lastPassedFemale = parameters!["female"] as! Bool
     }
 }
 
